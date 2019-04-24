@@ -5,8 +5,14 @@
 #include <stdio.h>
 #include <string.h>
 #include <stddef.h>
+#include <sys/mman.h>
+#include <unistd.h>
 
-#define DEFAULT_STORAGE_FILE "m_disk"
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+#define DEFAULT_STORAGE_FILE "mf_disk.bin"
 
 typedef struct sys_fat_t {
   int fat_id;
