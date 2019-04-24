@@ -4,4 +4,4 @@ designed in the likeness of FAT file system
 
 built with C
 
-To run call make from relative directory then run file_sys 
+To run call make from relative directory then run mfsys
