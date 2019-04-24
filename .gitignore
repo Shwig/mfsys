@@ -29,7 +29,6 @@ sites
 *.dylib
 
 # Executables
-a
 *.exe
 *.out
 *.app
@@ -38,6 +37,8 @@ a
 *.hex
 
 # Debug files
+a
+*.bin
 *.dSYM/
 *.su
 *.idb

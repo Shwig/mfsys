@@ -6,4 +6,4 @@ print_list : $(objects)
 
 .PHONY : clean
 clean :
-	rm a $(objects)
+	rm a mf_disk.bin $(objects)
