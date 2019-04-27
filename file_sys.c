@@ -14,8 +14,7 @@ int main(void) {
   // if (fstat(disk_fd,&Disk_stat)) { perror("fstat failed"); exit(EXIT_FAILURE); };
 
   // map file to file_sys virtual space
-  void *disk_map = mmap(NULL, page_size, PROT_READ|PROT_WRITE,
-                                                  MAP_SHARED, disk_fd, 0);
+  void *disk_map = mmap(NULL, page_size, PROT_READ|PROT_WRITE, MAP_SHARED, disk_fd, 0);
   if (disk_map == MAP_FAILED) { perror("mmap failed"); return(EXIT_FAILURE); };
 
   // close disk_fd text file descriptor, use later for operations on disk_map
