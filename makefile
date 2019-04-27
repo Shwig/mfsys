@@ -1,4 +1,4 @@
-CFLAGS = -g -std=gnu99
+CFLAGS = -g -std=gnu99 -Wall -Werror -Wextra
 objects = file_sys.o
 
 print_list : $(objects)
