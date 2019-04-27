@@ -1,7 +1,8 @@
-# file_sys
-An interactive memory mapped file system
-designed in the likeness of FAT file system
+# mfsys
+my_file_system
+A memory mapped file system designed in the likeness of a simplified FAT file system
 
-built with C
+built with C gnu99
 
-To run call make from relative directory then run mfsys
+To run call make from relative directory to generate mfsys
+ then call mfsys
