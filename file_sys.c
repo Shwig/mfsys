@@ -25,11 +25,20 @@ int main(void) {
 
   // check pointer addresses and size of each
   printf("%p\n", (void *) fat);
+  printf("%p\n", &fat[1]);
   printf("%p\n", (void *) blocks);
+  printf("%p\n", &blocks[1]);
   printf("%lu\n", sizeof(*fat));
   printf("%lu\n", sizeof(*blocks));
 
+  //initialize FAT
+  
 
+  // for (int i = 0; i < (DATA_OFFSET - 1); i++) {
+  //   /* code */
+  // }
+
+  // create root directory
 
   // unmap the disk file
   if (munmap(fat, page_size)) { perror("munmap failed"); return(EXIT_FAILURE); };
