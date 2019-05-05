@@ -18,15 +18,17 @@ int main(void) {
   // if (disk_map == MAP_FAILED) { perror("mmap failed"); close(disk_fd); return(EXIT_FAILURE); };
   Fat *fat_table = (Fat *) mmap(NULL, page_size, PROT_READ|PROT_WRITE, MAP_SHARED, disk_fd, 0);
   if (fat_table == MAP_FAILED) { perror("mmap failed"); close(disk_fd); return(EXIT_FAILURE); };
-  Block *blocks =(Fat *)(fat_table + DEFAULT_OFFSET);
+  Block *blocks =(Block *)(fat_table + DEFAULT_OFFSET);
 
   // close disk_fd text file descriptor, use later for operations on disk_map
   if (close(disk_fd)) { perror("disk_fd close faild"); return(EXIT_FAILURE); };
   disk_fd = 0;
 
-  //partition file into FAT and DataBlock segemnts
-  /* ?????  */
-
+  // check pointer addresses and size of each
+  // printf("%p\n", (void *) fat_table);
+  // printf("%p\n", (void *) blocks);
+  // printf("%lu\n", sizeof(*fat_table));
+  // printf("%lu\n", sizeof(*blocks));
 
 
   // unmap the disk file
