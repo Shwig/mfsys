@@ -12,7 +12,7 @@
 #include <fcntl.h>
 
 // defualt storage file to be mapped into the processes virtual space
-#define DISK_FILE "mf_disk.bin"
+#define DISK_FILE "mf_disk.txt"
 // default size of one block in the data segment of the disk_map
 #define BLOCK_SIZE 512
 
