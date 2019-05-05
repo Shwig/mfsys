@@ -16,30 +16,31 @@
 // default size of one block in the data segment of the disk_map
 #define DEFAULT_BLOCK_SIZE 512
 
-// A block in the FAT segment of the disk_map file
-typedef struct fat_block_t {
-  int fat_number;
-  int block_number;
-} Fat_block;
+#define DEFAULT_OFFSET 2048
+
+// An entry in the FAT segment of the disk_map file
+typedef struct fat_t {
+  int f_number; // file number first data_block of file or current data_block index
+  int next;     // next block index, -2 free block, -1 last block of file
+} Fat;
 
 // A data block in the data_block segment of the disk_map file
-typedef struct data_block_t {
-  int block_address;
-  void *data;
-} Data_block;
+typedef struct disk_block_t {
+  char data[DEFAULT_BLOCK_SIZE];
+} Block;
 
 // holds the meta data for a file stored in the data_block segment of disk_map file
-typedef struct mfsys_file_t {
-  int fat_number;
+typedef struct m_file_t {
+  int f_number;
   int f_type;
-  char *file_name;
-} Sys_file;
+  char file_name[32];
+} M_file;
 
 // A directory
 // A list of metat data for files stored in the data_block segment of disk_map file
-typedef struct mfsys_dir_t {
-  Sys_file *file_list;
-} Sys_Dir;
+typedef struct m_dir_t {
+  M_file file_list[64];
+} M_dir;
 
 // functions to operate on disk_map
 // mf_open, mf_close(), mf_read(), mf_write()
