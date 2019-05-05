@@ -12,11 +12,11 @@
 #include <fcntl.h>
 
 // defualt storage file to be mapped into the processes virtual space
-#define DEFAULT_STORAGE_FILE "mf_disk.bin"
+#define DISK_FILE "mf_disk.bin"
 // default size of one block in the data segment of the disk_map
-#define DEFAULT_BLOCK_SIZE 512
+#define BLOCK_SIZE 512
 
-#define DEFAULT_OFFSET 2048
+#define DATA_OFFSET 2048
 
 // An entry in the FAT segment of the disk_map file
 typedef struct fat_t {
@@ -26,7 +26,7 @@ typedef struct fat_t {
 
 // A data block in the data_block segment of the disk_map file
 typedef struct disk_block_t {
-  char data[DEFAULT_BLOCK_SIZE];
+  char data[BLOCK_SIZE];
 } Block;
 
 // holds the meta data for a file stored in the data_block segment of disk_map file
